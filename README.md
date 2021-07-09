@@ -3,6 +3,8 @@ Este es un script de ayuda para principiantes que quieran aprender sobre nmap, e
 
 ![nmap](https://user-images.githubusercontent.com/75817113/125015698-a4efce80-e035-11eb-99fd-1402df7ed007.jpg)
 
+![nmap1](https://user-images.githubusercontent.com/75817113/125015779-c9e44180-e035-11eb-9eb6-e866be57533a.jpg)
+
 # Instalación
 ## Termux: 
 $ pkg install git -y
