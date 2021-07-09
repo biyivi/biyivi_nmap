@@ -11,7 +11,7 @@ var1="1"
 
 echo "Instalar nmap"
 echo "1)Si"
-escho"2)No"
+echo "2)No"
 read -p ">> " resp1
 if [ "$resp1" == "$var1" ]
 then
