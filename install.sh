@@ -26,6 +26,6 @@ if [ "$resp" == "$var1" ]
 then
 python nmap_bgnnrs.py
 else
-echo "Para iniciar el scripit debe escribir: python nmap_bgnnrs.py"
+echo "Para iniciar el script debe escribir: python nmap_bgnnrs.py"
 echo ":D"
 fi
