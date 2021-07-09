@@ -1,4 +1,4 @@
-# biyivi_nmap
+# NMAP FOR BEGINNERS
 Este es un script de ayuda para principiantes que quieran aprender sobre nmap, evidentemente no es una lista completa,  ya que son muchos comandos.  Pero aqui mostrare los que considero más útiles o quizá más demandados por los usuarios  y administradores de seguridad o sistemas. Puedes instalar nmap para termux con el script "install.sh"(ejecutar script con: bash install.sh). 
 
 ![nmap](https://user-images.githubusercontent.com/75817113/125015698-a4efce80-e035-11eb-99fd-1402df7ed007.jpg)
