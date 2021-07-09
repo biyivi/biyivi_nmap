@@ -10,6 +10,7 @@ Este es un script de ayuda para principiantes que quieran aprender sobre nmap, e
 $ pkg install git -y
 
 $ git clone https://github.com/biyivi/biyivi_nmap
+
 $ cd biyivi_nmap
 
 $ bash install.sh
