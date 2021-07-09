@@ -8,6 +8,16 @@ pip install tqdm
 clear
 echo "La instalacion se ha completado.."
 var1="1"
+
+echo "Instalar nmap"
+echo "1)Si"
+escho"2)No"
+read -p ">> " resp1
+if [ "$resp1" == "$var1" ]
+then
+apt install nmap -y
+clear
+fi
 echo "Iniciar script"
 echo "1) Si"
 echo "2) Salir"
