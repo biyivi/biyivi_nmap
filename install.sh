@@ -18,7 +18,7 @@ then
 apt install nmap -y
 clear
 fi
-echo "Iniciar script"
+echo "Iniciar script:"
 echo "1) Si"
 echo "2) Salir"
 read -p ">> " resp
