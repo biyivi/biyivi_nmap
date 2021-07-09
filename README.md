@@ -22,3 +22,5 @@ $ git clone https://github.com/biyivi/biyivi_nmap
 $ cd biyivi_nmap
 
 $ python nmap_bgnnrs.py
+# Video en youtube 
+[![Alt text](https://img.youtube.com/vi/HgT-705ph44/0.jpg)](https://www.youtube.com/watch?v=HgT-705ph44)
