@@ -3,11 +3,17 @@ Este es un script de ayuda para principiantes que quieran aprender sobre nmap, e
 # Instalación
 ## Termux: 
 $ pkg install git -y
+
 $ git clone https://github.com/biyivi/biyivi_nmap
 $ cd biyivi_nmap
+
 $ bash install.sh
+
 $ python nmap_bgnnrs.py
+
 ## Linux:
 $ git clone https://github.com/biyivi/biyivi_nmap
+
 $ cd biyivi_nmap
+
 $ python nmap_bgnnrs.py
