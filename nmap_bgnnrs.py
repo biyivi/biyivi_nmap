@@ -18,7 +18,9 @@ from colorama import Fore
 from colorama import Style
 from tqdm import tqdm
 
-
+#salir
+def salir():
+    exit()  
 
 
 
@@ -45,8 +47,7 @@ clearConsole()
 
 
 def distro():
-    dist=int(input(Fore.RED+ Style.BRIGHT +'''
-
+    dist=input(Fore.RED+ Style.BRIGHT +'''
                                          )  (  (    (
                                          (  )  () @@  )  (( (
                                      (      (  )( @@  (  )) ) (
@@ -68,25 +69,24 @@ def distro():
     |   |  /   /   ()  ))   ))   .( ( ( ) ). ( !!  )( !! ) ((   ))  ..
     |   |_<   /   ( ) ( (  ) )   (( )  )).) ((/ |  (  | \(  )) ((. ).
 ____<_____\\__\__(___)_))_((_(____))__(_(___.oooO_____Oooo.(_(_)_)((_
-
 '''+ Style.RESET_ALL+Fore.YELLOW+'''
 Elige una opcion: 
 '''+Fore.RED+'''1)'''+Style.RESET_ALL+Fore.YELLOW+Style.BRIGHT+'''Linux
 '''+Fore.RED+'''2)'''+Style.RESET_ALL+Fore.YELLOW+Style.BRIGHT+'''Termux 
 '''+Style.RESET_ALL+          
-Fore.GREEN+">>> "))
-    if dist==1:
+Fore.GREEN+">>> ")
+    if dist=="1":
         barra()
         os.system("sudo apt install sl")
         clearConsole()
         os.system("sl")
-        time.sleep(2)
-    elif dist==2:
+        time.sleep(1)
+    elif dist=="2":
         barra()
         os.system("pkg install sl")
         clearConsole()
         os.system("sl")  
-        time.sleep(2)
+        time.sleep(1)
 
     else:
         print("")
@@ -113,11 +113,9 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
     if preg==1:
         print('''
 Escanear Hostname o IP:
-
 La versatilidad de Nmap nos ofrece la opción de realizar el escaneo 
 tanto mediante hostname como por IP, por lo que las dos líneas de 
 comando tendrán el mismo resultado
-
 comando utilizado: nmap <Ip> o <Hostname> 
 ejemplo: nmap 127.0.0.1 o nmap "nombre del host"
 ''')
@@ -158,12 +156,10 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 
         print('''
 Escaneo de puertos TCP básico:
-
 Esta opción analiza y muestra todos los puertos TCP (Transmission Control Protocol) 
 reservados actualmente en la máquina destino.
 -La opción -v significa “verbose”, por lo que se nos indica lo que está haciendo el análisis 
  al detalle
-
 comando utilizado: nmap -v <Ip>
 ejemplo: nmap -v 192.168.1.1''')
         time.sleep(2)
@@ -203,7 +199,6 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
     if preg==1:
         print(''' 
 Escanear un rango de IPs:
-
 Escanear un rango de IPs nos resultaría útil en casos de un posible ataque de red.
 si queremos intentar averiguar donde tiene lugar. También ahorraría tiempo al rastrear
 este tipo de ataques. Se usa simplemente delimitando el último campo.
@@ -247,15 +242,11 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
     if preg==1:
         print('''
 Escanear puertos concretos o rangos de puertos:
-
 Este método de escaneo se centra en un puerto concreto. De esta forma, conseguiremos
 que la salida sea más corta si no estamos interesados en otros.
-
 comando utilizado: nmap-p <numero_puerto> <Ip>
 ejemplo: nmap -p 80 192.168.1.200
-
 De manera similar, delimitaremos el primer y último puerto para escanear rangos de puertos:
-
 comando utilizado: nmap-p <numero_puerto_inicio>-<numero_puerto_final> <Ip>
 ejemplo: nmap -p 80-995 192.168.1.200
     
@@ -307,18 +298,14 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL)) 
     if preg==1:
         print(''' 
-
 Escanear todos los puertos con Nmap:
-
 Con este tipo de comando analizaremos los 65536 puertos disponibles en cada dispositivo. 
 Este tipo de escaneo puede interesar a un administrador, pero desde luego no a un atacante. 
 Primero, porque hace mucho ruido y segundo, porque normalmente ellos utilizan los conocidos 
 como “half-opening” (canal a medio abrir).        
         
 comando utilizado: nmap -p- localhost       
-
 Con este comando veras todos los puertos actualmente detectados en tu equipo(abiertos o filtrados)   
-
         ''')
         time.sleep(2)
         resp5()
@@ -350,18 +337,14 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print('''
-
 Lanzar un escaneo TCP SYN (opción por defecto):
-
 Este comando determina si el puerto objetivo está escuchando. Mediante este comando se puede llevar a
 cabo una técnica conocida como escaneo half-opening. Se le conoce así porque comienza como una conexión
 normal, pero no llega a establecerse un handshake por ambas partes, sino que enviamos un único paquete
 SYN y esperamos la respuesta.
 Si el intérprete reciba una respuesta SYN/ACK  o RST (reset) sabrá marcar que el puerto está escuchando.        
-
 comando utilizado: nmap-sS <IP>     
 ejemplo: nmap -sS 192.168.1.200        
-
         ''')
         time.sleep(2)
         resp6()
@@ -393,14 +376,11 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))  
     if preg==1:
         print('''
-
 Escaneo de sistema operativo:
 Es una opción simple que se limita a marcar el tipo de dispositivo, sistema operativo y MAC, entre otros datos.
 Escogeremos la opción “O”
-
 comando utilizado: nmap -O <IP>
 ejemplo:nmap -O 192.168.43.45
-
 ''')
         time.sleep(2)
         resp7()
@@ -434,9 +414,7 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))  
     if preg==1:
         print(''' 
-
 Escaneo de Sistema Operativo y servicios:        
-
 Escogeremos la opción “-A/a”.       
 comando utilizado: nmap -A <IP>
 ejemplo: nmap -A 192.168.1.43        
@@ -476,16 +454,12 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print('''
-
 Escaneo de servicios estandar:
-
 Si queremos evaluar únicamente los servicios con puerto asociado, es muy posible que la base de datos de Nmap 
 (con más de 2000 entradas) encuentre algo interesante.
 Puertos comunes como SSH (22), DNS (53) o HTTP (80) aparecerán listados.
-
 comando ejecutado: nmap -sV <IP>
 ejemplo: nmap -sV 192.168.1.43        
-
         ''')
         time.sleep(2)
         resp9()
@@ -518,14 +492,11 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print('''
-
 Escaneo de servicios agresivo:
-
 Con un análisis de servicios más agresivo podemos obtener más información. Sin embargo, este escaneo 
 deja más trazas en el sistema y en logs de firewalls, por lo que los hackers “black hat” normalmente 
 no utilizan este tipo de escaneo.
 Este método es útil para detectar servicios que no se están ejecutando en sus puertos predefinidos.
-
 comando utilizado: nmap -sV --version-intensity 5 <IP>
 ejemplo: nmap -sV --version-intensity 5 192.168.43.1                   
         ''')
@@ -561,15 +532,12 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))  
     if preg==1:
         print('''
-
 Escaneo de servicios de banner ligero:
-
 Un escaneo ligero de este tipo es usado normalmente por hackers cuando intentan permanecer en la sombra. 
 Es mucho menos ruidoso que un escaneo agresivo y permite obtener datos sin llamar demasiado la atención, 
 lo que aporta una clara ventaja.        
 Este método no intenta detectar el servicio, sino que se limita a capturar el banner del servicio abierto 
 para averiguar que se está ejecutando.        
-
 comando utilizado:  nmap -sV --version-intensity 0 <IP>
 ejemplo: nmap -sV --version-intensity 0 192.168.43.1         
         ''')
@@ -604,28 +572,21 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))  
     if preg==1:
         print('''
-
 Escaneo de una subred completa:
-
 Nmap es una herramienta extremadamente versátil y seguro que hay quien no la ha usado habitualmente para escanear 
 redes en su conjunto. Pues bien, aquí nos ofrece resultados igual de buenos.
 Básicamente, para realizar un escaneo de red completa con nmap tendremos ante todo que indicar el valor de la red
 como argumento a través del número de bytes de su máscara de red. Es decir, si cuando analizamos un único host 
 escribimos su dirección IP ej.: nmap <IP>. Ahora lo que haremos será indicar además la máscara de red.
-
 comando utilizado: nmap <IP>/<Mascara_de_Red>
 En esta pagina encontraras la forma en la que puedes calcular una mascara de subred para TCP-IP:
 link: https://protegermipc.net/2013/09/30/como-calcular-una-mascara-de-subred-para-tcp-ip/ 
-
 Aqui encontraras la forma de calcular subredes en Linux y Windows facilmente:                   
 link: https://protegermipc.net/2017/11/22/como-calcular-subredes-en-linux-y-windows-facilmente/   
-
 Tambien Podremos obtener los puertos abiertos de cada equipo de una subred mediante el 
 siguiente comando:
-
 comando utilizado: nmap <IP>*
 ejemplo: nmap 192.168.1.*
-
 Y poco más que decir, porque el resto de opciones siguen aplicando de igual forma que si se tratase de un 
 escaneo convencional.
 ''')
@@ -660,16 +621,12 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))     
     if preg==1:
         print('''
-
 Escaneo de toda la red con Nmap:
-
 Si necesitamos descubrir equipos vivos (es decir, que nos digan “oye, aquí estoy”) en toda la red pero no 
 queremos saber mucho sobre ellos, podemos lanzar un escaneo como el que sigue.   
 Se nos mostrará el estado del host, su latencia (el tiempo que tarda en responder), su IP y su dirección MAC.     
-
 comando utilizado: nmap -sP <IP>/<Máscara_de_red>        
 ejemplo: nmap -sP 192.168.1.0/24    
-
         ''')     
         resp13()
     elif preg==2:
@@ -698,18 +655,13 @@ Ver información:
 >>'''))
     if preg==1:
         print('''
-
 Escaneo de red con Nmap + puertos (rápido):
-
 Con el siguiente comando podremos analizar toda una red o rango en busca de hosts. Se nos mostrarán los datos
 del ejemplo anterior y además el estado de algunos de sus puertos (los más comunes).
-
 comando utilizado: nmap -F/-f <IP>/<Máscara_de_Red>
 ejemplo: nmap -F 192.168.1.0/24
-
 F: la opción -F indica que el escaneo sea Fast (rápido). Es decir, no se analizarán tantos puertos como con un 
 análisis corriente. Aquí se analizan los 100 puertos más comunes.
-
  ''')
         resp14()
     elif preg==2:
@@ -742,22 +694,16 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print(''' 
-
 Escaneo de red completa sigiloso con detección de SO:
-
 Este tipo de escaneo se diferencia del anterior en que añade algunos datos adicionales, como son:
-
 Tipo de dispositivo (device type): normalmente aparecerá “general purpose” o propósito general en ambientes 
 domésticos.
-
 Sistema operativo: intentará reconocer el sistema o kernel (en versiones Linux).
-
 Distancia de red (network distance): se lanzará además una traza de red que nos indicará cuantos saltos nos
 separan del dispositivo/red analizado.        
 """  """
 comando utilizado: nmap -sS -O <IP>/<Máscara>   
 ejemplo: nmap -sS -O 192.168.1.0/24        
-
 Ss: técnica de escaneo SYN (otras opciones incluyen sT/sA/sW/sM)
 O: detección de sistema operativo               
        
@@ -795,30 +741,21 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print('''
-
 Usar scripts con Nmap:
-
 Los scripts son útiles cuando buscamos información sobre diferentes tipos de ataque. Podemos utilizar un único 
 script o incluso un conjunto de ellos (para ahorrar tiempo).
-
 Un ejemplo sería el siguiente script, que busca ataques de tipo heartbleed:      
 comando utilizado: nmap -sV -p 443 --script=ssl-heartbleed <IP>
 ejemplo:nmap -sV -p 443 --script=ssl-heartbleed 192.168.43.1 
-
 Para actualizar la base de datos de scripts de Nmap (actualmente en torno a 500) usaremos el comando:
 comando utilizado: nmap --script-updatedb
-
 Para visualizar los scripts disponibles, podemos usar el comando.
 Kali linux: locate nse | grep script
 Windows: nmap --script-help *
-
 La opción anterior muestra todos los scripts de la base de datos. Para obtener información sobre uno en concreto usaremos:
-
 comando utilizado: nmap –script-help=<nombre>
-
 Los scripts nos permitirán realizar una gran cantidad de auditorías de seguridad de red y cosas más “interesantes”. 
 Si nos tomamos en serio la seguridad de nuestro entorno, será de gran utilidad tomar contacto con estos scripts.
-
 Mas informacion:
 link: https://clibre.io/blog/por-secciones/hardening/item/452-scripts-en-nmap
        
@@ -864,20 +801,17 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print('''
-
 Evitar el descubrimiento de hosts:
-
 Finalmente dejo un truco que será de ayuda para no llamar la atención. Nmap normalmente lanza un descubrimiento 
 de red con cada comando, aunque especifiquemos un puerto específico (por ejemplo: nmap -p 80 ejemplo.com).
 Con el siguiente parámetro es posible evitarlo y asi levantaremos menos alarmas:  
-
 comando utilizado: nmap -PN -p 80 ejemplo.com     
       
         ''')
         time.sleep(2)    
         resp17()
     elif preg==2:
-        obj=input("ingresar objetivo: ")
+        obj=input("Ingresar objetivo: ")
         puerto=input("Ingresar puerto: ")
         os.system("nmap -PN -p "+puerto+" "+obj)
         time.sleep(2)
@@ -909,12 +843,10 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
         print('''
     
 Escaneo desde un archivo:
-
 Mediante una de las opciones que nos ofrece nmap, podremos realizar el escaneo de varios host o equipos desde 
 un fichero en el que los tenemos almacenados. Muy útil si vamos tomando notas de varios equipos que queremos 
 escanear y realizar dicho escaneo en un momento determinado (por ejemplo en un momento de máxima actividad o por 
 el contrario en un momento donde la carga de trabajo sea mínima).        
-
 comando utilizado: nmap –iL "nombre_del_archivo".txt
 ejemplo: nmap –iL ips.txt       
            
@@ -950,15 +882,11 @@ Fore.GREEN+'''3)'''+Style.RESET_ALL+Fore.BLUE+'''Regresar al menu principal
 '''>>'''+Style.RESET_ALL))
     if preg==1:
         print('''
-
 Escaneo Multiobjetivo:
-
 Para recopilar información de varios objetivos a la vez sólo deberemos pasarle al comando 
 dichos objetivos separados por espacios:   
-
 comando utilizado: nmap <IP1> <IP2> <IP3>   
 ejemplo: nmap 192.168.1.135 192.168.1.136 192.168.1.139  
-
         ''')
         resp19()
     elif preg==2:
@@ -981,16 +909,13 @@ ejemplo: nmap 192.168.1.135 192.168.1.136 192.168.1.139
 
 def resp20():
     print(''' 
-
 Nmap:
-
 Cuando se trata de escoger las mejores herramientas de hacking o ciberseguridad, en el apartado 
 de escaneo / inventariado de redes siempre hay una que destaca por encima del resto:nmap(mapeador de redes).
 Nmap admite como valores para escaneo diferentes elementos: nombres de host (hostnames), direcciones
 IP o redes completas, entre otros.
 Esta navaja suiza de las redes y seguridad ofrece una variedad de tipos de análisis y opciones (incluida la de usar scripts)
 que la convierte en preferible para muchos.
-
 A continuación una muestra de los comandos que considero más útiles o quizá más demandados por los usuarios 
 y administradores de seguridad o sistemas. Evidentemente no es una lista completa, echarás en falta muchos 
 si conoces la herramienta. No olvidemos que esto es un script que busca servir de ayuda para principiantes.
@@ -1000,9 +925,29 @@ si conoces la herramienta. No olvidemos que esto es un script que busca servir d
     input("Presiona 'Enter' para ir al menu principal.")
     banner()
 
-#salir
-def salir():
-    exit()     
+
+def resp21():
+    cmmd=input("Ingresar comando >> ")
+    os.system(cmmd)
+    print("")
+    def mn():
+        print(Fore.RED+"1)"+Fore.YELLOW+"Ejecutar otro comando\n"+Fore.RED +"2)"+Fore.YELLOW+"Menu principal")
+        respcm=input(Fore.GREEN+">> ")
+        if respcm=="1":
+            resp21()
+        elif respcm=="2":
+            banner()
+
+        else:
+            print("")
+            print("Error ingrese una opcion valida(ej. '1' , '2' o '3') ")
+            print("")
+            time.sleep(2)
+            mn()
+    mn()
+
+
+
 
 
 
@@ -1012,7 +957,7 @@ def salir():
 
 def banner():  
     clearConsole()                                     
-    bans=int(input(Fore.YELLOW+'''                                      
+    bans=input(Fore.YELLOW+'''                                      
 ███╗   ██╗███╗   ███╗ █████╗ ██████╗     ███████╗ ██████╗ ██████╗       
 ████╗  ██║████╗ ████║██╔══██╗██╔══██╗    ██╔════╝██╔═══██╗██╔══██╗      
 ██╔██╗ ██║██╔████╔██║███████║██████╔╝    █████╗  ██║   ██║██████╔╝      
@@ -1029,11 +974,9 @@ def banner():
 '''+Fore.LIGHTMAGENTA_EX+
 '''
 by: b i y i v i
-
 '''+Style.RESET_ALL+Fore.GREEN+Style.BRIGHT+
 '''
    Elige una opcion: 
-
 '''+Fore.BLUE + Style.BRIGHT+"   01)"+Style.RESET_ALL+Fore.RED+''' Escanear Hostname o IP
 '''+Fore.BLUE + Style.BRIGHT+"   02)"+Style.RESET_ALL+Fore.RED+''' Escaneo de puertos TCP basico
 '''+Fore.BLUE + Style.BRIGHT+"   03)"+Style.RESET_ALL+Fore.RED+''' Escanear un rango de IPs
@@ -1054,52 +997,54 @@ by: b i y i v i
 '''+Fore.BLUE + Style.BRIGHT+"   18)"+Style.RESET_ALL+Fore.RED+''' Escaneo desde un archivo
 '''+Fore.BLUE + Style.BRIGHT+"   19)"+Style.RESET_ALL+Fore.RED+''' Escaneo Multiobjetivo
 '''+Fore.BLUE + Style.BRIGHT+"   20)"+Style.RESET_ALL+Fore.RED+''' Nmap
-'''+Fore.BLUE + Style.BRIGHT+"   21)"+Style.RESET_ALL+Fore.LIGHTRED_EX+''' Exit
-
-    '''+Fore.RED+">>> "+Style.RESET_ALL))
+'''+Fore.BLUE + Style.BRIGHT+"   21)"+Style.RESET_ALL+Fore.RED+''' Ejecutar otro comando
+'''+Fore.BLUE + Style.BRIGHT+"   22)"+Style.RESET_ALL+Fore.LIGHTRED_EX+''' Exit
+    '''+Fore.RED+">>> "+Style.RESET_ALL)
     print("")
 
-    if bans==1 :
+    if bans=="1" :
         resp()
-    elif bans==2:
+    elif bans=="2":
         resp2()    
-    elif bans==3:
+    elif bans=="3":
         resp3() 
-    elif bans==4:
+    elif bans=="4":
         resp4()
-    elif bans==5:
+    elif bans=="5":
         resp5()            
-    elif bans==6:
+    elif bans=="6":
         resp6()                        
-    elif bans==7:
+    elif bans=="7":
         resp7()
-    elif bans==8:
+    elif bans=="8":
         resp8()
-    elif bans==9:
+    elif bans=="9":
         resp9()
-    elif bans==10:
+    elif bans=="10":
         resp10()
-    elif bans==11:
+    elif bans=="11":
         resp11()
-    elif bans==12:
+    elif bans=="12":
         resp12()
-    elif bans==13:
+    elif bans=="13":
         resp13()
-    elif bans==14:
+    elif bans=="14":
         resp14()
-    elif bans==15:
+    elif bans=="15":
         resp15()
-    elif bans==16:
+    elif bans=="16":
         resp16()
-    elif bans==17:
+    elif bans=="17":
         resp17()
-    elif bans==18:
+    elif bans=="18":
         resp18()
-    elif bans==19:
+    elif bans=="19":
         resp19()
-    elif bans==20:
+    elif bans=="20":
         resp20()
-    elif bans==21:
+    elif bans=="21":
+        resp21()
+    elif bans=="22":
         salir()
     else: 
         print("Error ingrese una opcion valida. ")
